@@ -1,0 +1,20 @@
+body{
+    display:flex;
+    justify-content: center;
+}
+.container{
+    display:flex;
+    flex-wrap: wrap;
+    width: 500px;
+    height: 500px;
+}
+
+.grid-cell{
+    box-sizing: border-box;
+    border: 1px black solid;
+}
+
+.grid-cell:hover{
+    background-color: #7799FF;
+}
+
