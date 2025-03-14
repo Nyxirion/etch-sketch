@@ -1,6 +1,9 @@
 const containerSize = 500;
 const container = document.querySelector(".container");
 
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
 function createGrid(cell = 16){
     maxCell = cell;
     for(let i = 0; i < maxCell * maxCell; i++){
@@ -15,7 +18,8 @@ function createGrid(cell = 16){
 container.addEventListener("mouseover", (event) => {
     let target = event.target;
     if (target.getAttribute("class") == "grid-cell"){
-        target.style.backgroundColor = "lightblue";
+        if(!target.style.backgroundColor)
+            target.style.backgroundColor = `rgb(${getRandomInt(255)},${getRandomInt(255)},${getRandomInt(255)})`;
     }
 });
 
