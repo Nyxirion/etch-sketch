@@ -17,9 +17,17 @@ function createGrid(cell = 16){
 
 container.addEventListener("mouseover", (event) => {
     let target = event.target;
+
     if (target.getAttribute("class") == "grid-cell"){
-        if(!target.style.backgroundColor)
-            target.style.backgroundColor = `rgb(${getRandomInt(255)},${getRandomInt(255)},${getRandomInt(255)})`;
+        let currentOpacity = parseFloat(target.style.opacity) || 0;
+        let newOpacity = currentOpacity + 0.1;
+        if (newOpacity < 0){
+            newOpacity = 0;
+        }
+        target.style.opacity = newOpacity;
+    }
+    if(!target.style.backgroundColor){
+        target.style.backgroundColor = `rgb(${getRandomInt(255)},${getRandomInt(255)},${getRandomInt(255)})`;
     }
 });
 
